@@ -1,0 +1,57 @@
+package ArrayListConcept;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayListCompare {
+
+	public static void main(String[] args) {
+		
+		//sort and then equals( we need to sort the array since the equals function will compare index wise)
+		ArrayList<Integer> l1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7));
+		ArrayList<Integer> l2 = new ArrayList<Integer>(Arrays.asList(2,3,1,4,5,6));
+		ArrayList<Integer> l3 = new ArrayList<Integer>(Arrays.asList(7,3,1,4,5,6,2));
+		Collections.sort(l1);
+		Collections.sort(l2);
+		Collections.sort(l3);
+		System.out.println(l1.equals(l2));
+		System.out.println(l2.equals(l3));
+		System.out.println(l3.equals(l1));
+		
+		//compare two list findout additional elements
+		
+		ArrayList<String> s1 = new ArrayList<String>(Arrays.asList("Tina","Sara","Ira","Ojas","Rishi","Ansh"));
+		ArrayList<String> s2 = new ArrayList<String>(Arrays.asList("Tina","Sara","Ira","Sejal"));
+		ArrayList<String> s3 = new ArrayList<String>(s1);
+		//System.out.println(s1);
+		System.out.println(s1.removeAll(s2));
+		System.out.println(s3);
+		System.out.println(s1);
+		System.out.println(s2);
+		
+		
+		//findout missing element
+		
+		ArrayList<String> s4 = new ArrayList<String>(Arrays.asList("Tina","Sara","Ira","Ojas","Rishi","Ansh"));
+		ArrayList<String> s5= new ArrayList<String>(Arrays.asList("Tina","Sara","Ira","Sejal"));
+		s5.removeAll(s4);
+		System.out.println(s5);
+		System.out.println(s4);
+		
+		
+		//findout common elements
+		ArrayList<String> lang1 = new ArrayList<String>(Arrays.asList("C#","Java","Python","Ruby","Cucumber"));
+		ArrayList<String> lang2= new ArrayList<String>(Arrays.asList("C#","Java","Python","Ruby","PHP","COBOL"));
+		System.out.println(lang1);
+		System.out.println(lang2);
+		System.out.println("*******");
+		lang2.retainAll(lang1);
+		System.out.println(lang1);
+		System.out.println(lang2);
+		
+		
+	}
+
+}
